@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitación Minecraft</title>
+
+  <!-- 🖼️ PREVIEW DEL LINK -->
+  <meta property="og:title" content="🎮 Ven a Celebrar en Modo Minecraft">
+  <meta property="og:description" content="Da clic y confirma tu asistencia">
+  <meta property="og:image" content="https://qat02.github.io/Cumple-6-JM/banner.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- 🔥 ESTA ES LA CLAVE -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://qat02.github.io/Cumple-6-JM/banner.png">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: "Trebuchet MS", Arial, sans-serif;
+      background:
+        linear-gradient(#74c7ff 0%, #74c7ff 44%, #66c64d 44%, #2f8f36 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 18px;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(45deg, rgba(255,255,255,.13) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(255,255,255,.13) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(255,255,255,.13) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(255,255,255,.13) 75%);
+      background-size: 42px 42px;
+      background-position: 0 0, 0 21px, 21px -21px, -21px 0;
+      opacity: .35;
+      pointer-events: none;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 430px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card {
+      background: #2c1b10;
+      border: 7px solid #6b3f20;
+      border-radius: 20px;
+      box-shadow: 0 10px 0 #1a1009, 0 22px 40px rgba(0,0,0,.38);
+      padding: 16px;
+      text-align: center;
+    }
+
+    .grass {
+      height: 32px;
+      border-radius: 10px;
+      border: 4px solid #1f7d26;
+      background: repeating-linear-gradient(
+        90deg,
+        #42d14d 0 34px,
+        #2da937 34px 68px
+      );
+      box-shadow: inset 0 -9px 0 #8a5129;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      color: #ffe76a;
+      font-size: clamp(28px, 8vw, 39px);
+      line-height: 1.05;
+      text-shadow: 4px 4px 0 #000;
+      margin-bottom: 14px;
+      letter-spacing: .5px;
+    }
+
+    .video-wrap {
+      width: 100%;
+      max-width: 330px;
+      margin: 0 auto 16px;
+      background: #000;
+      border: 6px solid #8f8f8f;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: inset 0 0 0 4px #d3d3d3, 0 8px 0 #111;
+    }
+
+    video {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      display: block;
+      background: #000;
+      object-fit: contain;
+    }
+
+    .details {
+      background: #4a2d18;
+      border: 5px solid #8b572b;
+      border-radius: 14px;
+      padding: 13px;
+      margin-bottom: 16px;
+      box-shadow: inset 0 0 0 3px rgba(255,255,255,.08);
+    }
+
+    .details p {
+      font-size: 17px;
+      margin: 8px 0;
+      text-shadow: 2px 2px 0 #000;
+      font-weight: bold;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      max-width: 330px;
+      margin: 0 auto;
+      padding: 16px 14px;
+      background: #39cf48;
+      color: white;
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: 900;
+      border: 5px solid #1b7d24;
+      border-radius: 12px;
+      text-shadow: 3px 3px 0 #000;
+      box-shadow: 0 8px 0 #135d1a;
+    }
+
+    .btn:active {
+      transform: translateY(6px);
+      box-shadow: 0 2px 0 #135d1a;
+    }
+
+    @keyframes brillo {
+      0% { box-shadow: 0 0 0px #39cf48; }
+      50% { box-shadow: 0 0 20px #39cf48; }
+      100% { box-shadow: 0 0 0px #39cf48; }
+    }
+
+    .btn-brillo {
+      animation: brillo 1s infinite;
+    }
+
+    .blocks {
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+      margin-top: 15px;
+      flex-wrap: wrap;
+    }
+
+    .block {
+      width: 30px;
+      height: 30px;
+      border: 3px solid rgba(0,0,0,.35);
+      box-shadow: inset 0 0 0 3px rgba(255,255,255,.12);
+    }
+
+    .b1 { background: #43cf4b; }
+    .b2 { background: #8b572b; }
+    .b3 { background: #8e8e8e; }
+    .b4 { background: #43dfff; }
+
+    @media (max-width: 420px) {
+      body { padding: 12px; }
+      .card { padding: 13px; }
+      .details p { font-size: 15px; }
+      .btn { font-size: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <section class="card">
+      <div class="grass"></div>
+
+      <h1>Ven a Celebrar en Modo Minecraft</h1>
+
+      <div class="video-wrap">
+        <video controls playsinline preload="auto">
+          <source src="invitacion.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <!-- BOTÓN -->
+      <a class="btn" href="https://forms.gle/hPQqSoP4MS6sHKdT6" target="_blank">
+        ✅ Confirmar asistencia
+      </a>
+
+      <!-- DATOS -->
+      <div class="details">
+        <p>📅 Sábado 16 de mayo</p>
+        <p>⏰ 1:30 p. m.</p>
+        <p>📍 Calle Benito Juárez 1407, Miguel Hidalgo, 80090 Culiacán Rosales, Sin.</p>
+      </div>
+
+      <div class="blocks">
+        <div class="block b1"></div>
+        <div class="block b2"></div>
+        <div class="block b3"></div>
+        <div class="block b4"></div>
+        <div class="block b1"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 🔊 SONIDO -->
+  <audio id="sonidoClick" src="click.mp3"></audio>
+
+  <script>
+    const boton = document.querySelector(".btn");
+    const sonido = document.getElementById("sonidoClick");
+    const video = document.querySelector("video");
+
+    boton.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      if (sonido.paused) {
+        sonido.currentTime = 0;
+        sonido.play();
+      }
+
+      setTimeout(() => {
+        window.open(boton.href, "_blank");
+      }, 150);
+    });
+
+    video.addEventListener("pause", () => {
+      boton.classList.add("btn-brillo");
+    });
+
+    video.addEventListener("ended", () => {
+      boton.classList.add("btn-brillo");
+    });
+
+    video.addEventListener("play", () => {
+      boton.classList.remove("btn-brillo");
+    });
+  </script>
+
+</body>
+</html>
